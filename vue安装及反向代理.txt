@@ -1,0 +1,173 @@
+一、基本配置
+
+vue-cli
+1.安装
+npm install -g vue-cli
+2. 生成项目
+vue init webpack 工程名
+3. 根据各种问题选择合适的选项
+4. npm install
+5. 运行项目
+npm run dev
+
+注意事项：安装的过程中不要装ESlint，否则会对代码格式检查的非常严格。
+如果装了，那么在  .eslintignore中添加src/**/*.* 即可解除。
+
+二、跨域请求
+
+
+A、反向代理（写相对路径）
+若想从
+http://m.maizuo.com/v4/api/film/now-playing?__t=1510203501336&page=1&count=5
+中获取数据，进行反向代理
+
+添加反向代理之后，要重启cmd   npm run dev
+
+1、安装cnpm install axios --save
+2、在config/index.js文件中将
+proxyTable{}
+替换成如下：
+proxyTable: {
+      '/v4': {//这里是我配置的名字
+    　　　　target: 'http://m.maizuo.com', //这个路径是我代理到本地tp框架里面
+    　　　　 changeOrigin: true, //开启代理
+     　　　　pathRewrite: { '^/v4': '/v4' }  //这里重写路径/run就代理到对应地址
+
+    　　} 
+    }
+
+3、在组件的script标签中，写上
+
+import axios from 'axios';
+
+mounted:function(){
+	this.getData();
+},
+methods:{
+			getData:function(){
+			  axios.get('/v4/api/film/now-playing?__t=1510203501336&page=1&count=5')  //api是前端自己添加的 
+			     .then(function (res) {
+			       console.log(res);
+			     })
+			     .catch(function (error) {
+			       console.log(error);
+			     });
+			 }
+		}
+
+
+其他方法：：：：：：：：：：：：：：：：：：：：：：
+
+
+反向代理
+方法一:
+1.	下载的官方的脚手架打开文件的build/dev-server.js
+app.use('/api', proxyMiddleware({  //组件向本地服务器请求的路径
+  target: 'http://xxxx.weddingee.com/', //需要访问的目标服务器的路径
+  changeOrigin:true,//通过设置changeOrigin:true 开启代理
+}));
+2.	npm  install axios -D   //全局配置axios方法
+
+
+3.	在main.js中，或者需要用到反向代理的组件中import
+import axios from 'axios'
+// Vue.prototype.axios = axios //组件调用this.axios.get(...)
+// Vue.prototype.$ajax = axios  //换个名字 组件调用this.$ajax.get(...)
+window.axios = axios;  //组件中调用 axios.get(...)
+
+
+4.	组件中调用的方法：
+getData(){
+  axios.get('/api')  //api是前端自己添加的 ，请求自己添加的路径
+     .then(function (res) {
+       console.log(res);
+     })
+     .catch(function (error) {
+       console.log(error);
+     });
+ }
+
+
+B、corns（写绝对路径）
+
+
+
+三、利用vue写前端，express脚手架搭建写后端时，利用反向代理进行连接，
+
+app.js文件配置为
+app.use('/', users);
+
+routes中的.js文件配的路径是
+router.post('/api/regist', function(req, res, next) {});
+
+若写成app.use('/api', users);
+routes中的.js文件配的路径是
+router.post('/regist', function(req, res, next) {});
+
+反向代理的写法：
+ '/api': {
+                target: 'http://localhost:3000',
+                changeOrigin: true,
+                pathRewrite: {
+                  '^/api': '/api'
+                }
+            }
+
+实际跳转路径为 
+
+http://localhost:3000/api/regist;
+
+
+若app.js文件配置为
+app.use('/cart',cart);
+
+routes中的.js文件配的路径是
+router.post('/api/regist', function(req, res, next) {});
+
+反向代理的写法：
+'/cart': {
+                target: 'http://localhost:3000',
+                changeOrigin: true,
+                pathRewrite: {
+                  '^/cart': '/cart'
+                }
+            }
+
+实际跳转路径为 
+
+http://localhost:3000/cart/api/regist;
+
+注意：！！！！！！！！！！！！！！！！！！！！！！！！！！！！！
+vue-router中有模式(mode)，路由中不一定非得是hash模式
+hash模式 ，带"#"，类似于http://localhost:8080/#/  这种
+非hash模式，无“#”；
+
+mode 可选值：“hash”| “history”|“abstract”;默认为hash模式 
+
+hash:使用URL hash值来作路由。支持所有浏览器，包括不支持HTML5 History Api的浏览器。
+history:依赖HTML5 History API 和服务器配置。查看HTML5 History模式
+abstract:支持所有JavaScript运行环境，如Node.js服务器端。如果发现没有浏览器的API,路由会自动强制进入这个模式。
+
+在router/index.js中，有一个属性：mode,类似于
+
+export default new Router({
+	mode:"history",
+	routes:[{
+      		path: '/',
+      		name: 'Home',
+      		component: Home,
+		}]
+	})
+
+所以在跳转页面时，使用this.$router.push('/my');
+
+刷新页面时，使用this.$router.go('/my')，可以省略go()里面的路径，一样的效果;
+
+
+
+
+
+
+
+
+
