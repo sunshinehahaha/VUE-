@@ -1,42 +1,42 @@
-Ò»¡¢»ù±¾ÅäÖÃ
+ä¸€ã€åŸºæœ¬é…ç½®
 
 vue-cli
-1.°²×°
+1.å®‰è£…
 npm install -g vue-cli
-2. Éú³ÉÏîÄ¿
-vue init webpack ¹¤³ÌÃû
-3. ¸ù¾İ¸÷ÖÖÎÊÌâÑ¡ÔñºÏÊÊµÄÑ¡Ïî
+2. ç”Ÿæˆé¡¹ç›®
+vue init webpack å·¥ç¨‹å
+3. æ ¹æ®å„ç§é—®é¢˜é€‰æ‹©åˆé€‚çš„é€‰é¡¹
 4. npm install
-5. ÔËĞĞÏîÄ¿
+5. è¿è¡Œé¡¹ç›®
 npm run dev
 
-×¢ÒâÊÂÏî£º°²×°µÄ¹ı³ÌÖĞ²»Òª×°ESlint£¬·ñÔò»á¶Ô´úÂë¸ñÊ½¼ì²éµÄ·Ç³£ÑÏ¸ñ¡£
-Èç¹û×°ÁË£¬ÄÇÃ´ÔÚ  .eslintignoreÖĞÌí¼Ósrc/**/*.* ¼´¿É½â³ı¡£
+æ³¨æ„äº‹é¡¹ï¼šå®‰è£…çš„è¿‡ç¨‹ä¸­ä¸è¦è£…ESlintï¼Œå¦åˆ™ä¼šå¯¹ä»£ç æ ¼å¼æ£€æŸ¥çš„éå¸¸ä¸¥æ ¼ã€‚
+å¦‚æœè£…äº†ï¼Œé‚£ä¹ˆåœ¨  .eslintignoreä¸­æ·»åŠ src/**/*.* å³å¯è§£é™¤ã€‚
 
-¶ş¡¢¿çÓòÇëÇó
+äºŒã€è·¨åŸŸè¯·æ±‚
 
 
-A¡¢·´Ïò´úÀí£¨Ğ´Ïà¶ÔÂ·¾¶£©
-ÈôÏë´Ó
+Aã€åå‘ä»£ç†ï¼ˆå†™ç›¸å¯¹è·¯å¾„ï¼‰
+è‹¥æƒ³ä»
 http://m.maizuo.com/v4/api/film/now-playing?__t=1510203501336&page=1&count=5
-ÖĞ»ñÈ¡Êı¾İ£¬½øĞĞ·´Ïò´úÀí
+ä¸­è·å–æ•°æ®ï¼Œè¿›è¡Œåå‘ä»£ç†
 
-Ìí¼Ó·´Ïò´úÀíÖ®ºó£¬ÒªÖØÆôcmd   npm run dev
+æ·»åŠ åå‘ä»£ç†ä¹‹åï¼Œè¦é‡å¯cmd   npm run dev
 
-1¡¢°²×°cnpm install axios --save
-2¡¢ÔÚconfig/index.jsÎÄ¼şÖĞ½«
+1ã€å®‰è£…cnpm install axios --save
+2ã€åœ¨config/index.jsæ–‡ä»¶ä¸­å°†
 proxyTable{}
-Ìæ»»³ÉÈçÏÂ£º
+æ›¿æ¢æˆå¦‚ä¸‹ï¼š
 proxyTable: {
-      '/v4': {//ÕâÀïÊÇÎÒÅäÖÃµÄÃû×Ö
-    ¡¡¡¡¡¡¡¡target: 'http://m.maizuo.com', //Õâ¸öÂ·¾¶ÊÇÎÒ´úÀíµ½±¾µØtp¿ò¼ÜÀïÃæ
-    ¡¡¡¡¡¡¡¡ changeOrigin: true, //¿ªÆô´úÀí
-     ¡¡¡¡¡¡¡¡pathRewrite: { '^/v4': '/v4' }  //ÕâÀïÖØĞ´Â·¾¶/run¾Í´úÀíµ½¶ÔÓ¦µØÖ·
-
-    ¡¡¡¡} 
+      '/v4': {//è¿™é‡Œæ˜¯æˆ‘é…ç½®çš„åå­—
+    ã€€ã€€ã€€ã€€target: 'http://m.maizuo.com', //è¿™ä¸ªè·¯å¾„æ˜¯æˆ‘ä»£ç†åˆ°æœ¬åœ°tpæ¡†æ¶é‡Œé¢
+    ã€€ã€€ã€€ã€€ changeOrigin: true, //å¼€å¯ä»£ç†
+     ã€€ã€€ã€€ã€€pathRewrite: { '^/v4': '/v4' }  //è¿™é‡Œé‡å†™è·¯å¾„/runå°±ä»£ç†åˆ°å¯¹åº”åœ°å€
+		//å¦‚æœæƒ³è¦åŒæ—¶ä»£ç†åˆ°å¤šä¸ªè·¯å¾„ï¼Œåˆ™æœ€åçš„ '/v4' å†™ä¸º ' ' ï¼›
+ Â   ã€€ã€€} 
     }
 
-3¡¢ÔÚ×é¼şµÄscript±êÇ©ÖĞ£¬Ğ´ÉÏ
+3ã€åœ¨ç»„ä»¶çš„scriptæ ‡ç­¾ä¸­ï¼Œå†™ä¸Š
 
 import axios from 'axios';
 
@@ -45,7 +45,7 @@ mounted:function(){
 },
 methods:{
 			getData:function(){
-			  axios.get('/v4/api/film/now-playing?__t=1510203501336&page=1&count=5')  //apiÊÇÇ°¶Ë×Ô¼ºÌí¼ÓµÄ 
+			  axios.get('/v4/api/film/now-playing?__t=1510203501336&page=1&count=5')  //apiæ˜¯å‰ç«¯è‡ªå·±æ·»åŠ çš„ 
 			     .then(function (res) {
 			       console.log(res);
 			     })
@@ -56,29 +56,29 @@ methods:{
 		}
 
 
-ÆäËû·½·¨£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º£º
+å…¶ä»–æ–¹æ³•ï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼šï¼š
 
 
-·´Ïò´úÀí
-·½·¨Ò»:
-1.	ÏÂÔØµÄ¹Ù·½µÄ½ÅÊÖ¼Ü´ò¿ªÎÄ¼şµÄbuild/dev-server.js
-app.use('/api', proxyMiddleware({  //×é¼şÏò±¾µØ·şÎñÆ÷ÇëÇóµÄÂ·¾¶
-  target: 'http://xxxx.weddingee.com/', //ĞèÒª·ÃÎÊµÄÄ¿±ê·şÎñÆ÷µÄÂ·¾¶
-  changeOrigin:true,//Í¨¹ıÉèÖÃchangeOrigin:true ¿ªÆô´úÀí
+åå‘ä»£ç†
+æ–¹æ³•ä¸€:
+1.	ä¸‹è½½çš„å®˜æ–¹çš„è„šæ‰‹æ¶æ‰“å¼€æ–‡ä»¶çš„build/dev-server.js
+app.use('/api', proxyMiddleware({  //ç»„ä»¶å‘æœ¬åœ°æœåŠ¡å™¨è¯·æ±‚çš„è·¯å¾„
+  target: 'http://xxxx.weddingee.com/', //éœ€è¦è®¿é—®çš„ç›®æ ‡æœåŠ¡å™¨çš„è·¯å¾„
+  changeOrigin:true,//é€šè¿‡è®¾ç½®changeOrigin:true å¼€å¯ä»£ç†
 }));
-2.	npm  install axios -D   //È«¾ÖÅäÖÃaxios·½·¨
+2.	npm  install axios -D   //å…¨å±€é…ç½®axiosæ–¹æ³•
 
 
-3.	ÔÚmain.jsÖĞ£¬»òÕßĞèÒªÓÃµ½·´Ïò´úÀíµÄ×é¼şÖĞimport
+3.	åœ¨main.jsä¸­ï¼Œæˆ–è€…éœ€è¦ç”¨åˆ°åå‘ä»£ç†çš„ç»„ä»¶ä¸­import
 import axios from 'axios'
-// Vue.prototype.axios = axios //×é¼şµ÷ÓÃthis.axios.get(...)
-// Vue.prototype.$ajax = axios  //»»¸öÃû×Ö ×é¼şµ÷ÓÃthis.$ajax.get(...)
-window.axios = axios;  //×é¼şÖĞµ÷ÓÃ axios.get(...)
+// Vue.prototype.axios = axios //ç»„ä»¶è°ƒç”¨this.axios.get(...)
+// Vue.prototype.$ajax = axios  //æ¢ä¸ªåå­— ç»„ä»¶è°ƒç”¨this.$ajax.get(...)
+window.axios = axios;  //ç»„ä»¶ä¸­è°ƒç”¨ axios.get(...)
 
 
-4.	×é¼şÖĞµ÷ÓÃµÄ·½·¨£º
+4.	ç»„ä»¶ä¸­è°ƒç”¨çš„æ–¹æ³•ï¼š
 getData(){
-  axios.get('/api')  //apiÊÇÇ°¶Ë×Ô¼ºÌí¼ÓµÄ £¬ÇëÇó×Ô¼ºÌí¼ÓµÄÂ·¾¶
+  axios.get('/api')  //apiæ˜¯å‰ç«¯è‡ªå·±æ·»åŠ çš„ ï¼Œè¯·æ±‚è‡ªå·±æ·»åŠ çš„è·¯å¾„
      .then(function (res) {
        console.log(res);
      })
@@ -88,23 +88,23 @@ getData(){
  }
 
 
-B¡¢corns£¨Ğ´¾ø¶ÔÂ·¾¶£©
+Bã€cornsï¼ˆå†™ç»å¯¹è·¯å¾„ï¼‰
 
 
 
-Èı¡¢ÀûÓÃvueĞ´Ç°¶Ë£¬express½ÅÊÖ¼Ü´î½¨Ğ´ºó¶ËÊ±£¬ÀûÓÃ·´Ïò´úÀí½øĞĞÁ¬½Ó£¬
+ä¸‰ã€åˆ©ç”¨vueå†™å‰ç«¯ï¼Œexpressè„šæ‰‹æ¶æ­å»ºå†™åç«¯æ—¶ï¼Œåˆ©ç”¨åå‘ä»£ç†è¿›è¡Œè¿æ¥ï¼Œ
 
-app.jsÎÄ¼şÅäÖÃÎª
+app.jsæ–‡ä»¶é…ç½®ä¸º
 app.use('/', users);
 
-routesÖĞµÄ.jsÎÄ¼şÅäµÄÂ·¾¶ÊÇ
+routesä¸­çš„.jsæ–‡ä»¶é…çš„è·¯å¾„æ˜¯
 router.post('/api/regist', function(req, res, next) {});
 
-ÈôĞ´³Éapp.use('/api', users);
-routesÖĞµÄ.jsÎÄ¼şÅäµÄÂ·¾¶ÊÇ
+è‹¥å†™æˆapp.use('/api', users);
+routesä¸­çš„.jsæ–‡ä»¶é…çš„è·¯å¾„æ˜¯
 router.post('/regist', function(req, res, next) {});
 
-·´Ïò´úÀíµÄĞ´·¨£º
+åå‘ä»£ç†çš„å†™æ³•ï¼š
  '/api': {
                 target: 'http://localhost:3000',
                 changeOrigin: true,
@@ -113,18 +113,18 @@ router.post('/regist', function(req, res, next) {});
                 }
             }
 
-Êµ¼ÊÌø×ªÂ·¾¶Îª 
+å®é™…è·³è½¬è·¯å¾„ä¸º 
 
 http://localhost:3000/api/regist;
 
 
-Èôapp.jsÎÄ¼şÅäÖÃÎª
+è‹¥app.jsæ–‡ä»¶é…ç½®ä¸º
 app.use('/cart',cart);
 
-routesÖĞµÄ.jsÎÄ¼şÅäµÄÂ·¾¶ÊÇ
+routesä¸­çš„.jsæ–‡ä»¶é…çš„è·¯å¾„æ˜¯
 router.post('/api/regist', function(req, res, next) {});
 
-·´Ïò´úÀíµÄĞ´·¨£º
+åå‘ä»£ç†çš„å†™æ³•ï¼š
 '/cart': {
                 target: 'http://localhost:3000',
                 changeOrigin: true,
@@ -133,22 +133,22 @@ router.post('/api/regist', function(req, res, next) {});
                 }
             }
 
-Êµ¼ÊÌø×ªÂ·¾¶Îª 
+å®é™…è·³è½¬è·¯å¾„ä¸º 
 
 http://localhost:3000/cart/api/regist;
 
-×¢Òâ£º£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡
-vue-routerÖĞÓĞÄ£Ê½(mode)£¬Â·ÓÉÖĞ²»Ò»¶¨·ÇµÃÊÇhashÄ£Ê½
-hashÄ£Ê½ £¬´ø"#"£¬ÀàËÆÓÚhttp://localhost:8080/#/  ÕâÖÖ
-·ÇhashÄ£Ê½£¬ÎŞ¡°#¡±£»
+æ³¨æ„ï¼šï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+vue-routerä¸­æœ‰æ¨¡å¼(mode)ï¼Œè·¯ç”±ä¸­ä¸ä¸€å®šéå¾—æ˜¯hashæ¨¡å¼
+hashæ¨¡å¼ ï¼Œå¸¦"#"ï¼Œç±»ä¼¼äºhttp://localhost:8080/#/  è¿™ç§
+éhashæ¨¡å¼ï¼Œæ— â€œ#â€ï¼›
 
-mode ¿ÉÑ¡Öµ£º¡°hash¡±| ¡°history¡±|¡°abstract¡±;Ä¬ÈÏÎªhashÄ£Ê½ 
+mode å¯é€‰å€¼ï¼šâ€œhashâ€| â€œhistoryâ€|â€œabstractâ€;é»˜è®¤ä¸ºhashæ¨¡å¼ 
 
-hash:Ê¹ÓÃURL hashÖµÀ´×÷Â·ÓÉ¡£Ö§³ÖËùÓĞä¯ÀÀÆ÷£¬°üÀ¨²»Ö§³ÖHTML5 History ApiµÄä¯ÀÀÆ÷¡£
-history:ÒÀÀµHTML5 History API ºÍ·şÎñÆ÷ÅäÖÃ¡£²é¿´HTML5 HistoryÄ£Ê½
-abstract:Ö§³ÖËùÓĞJavaScriptÔËĞĞ»·¾³£¬ÈçNode.js·şÎñÆ÷¶Ë¡£Èç¹û·¢ÏÖÃ»ÓĞä¯ÀÀÆ÷µÄAPI,Â·ÓÉ»á×Ô¶¯Ç¿ÖÆ½øÈëÕâ¸öÄ£Ê½¡£
+hash:ä½¿ç”¨URL hashå€¼æ¥ä½œè·¯ç”±ã€‚æ”¯æŒæ‰€æœ‰æµè§ˆå™¨ï¼ŒåŒ…æ‹¬ä¸æ”¯æŒHTML5 History Apiçš„æµè§ˆå™¨ã€‚
+history:ä¾èµ–HTML5 History API å’ŒæœåŠ¡å™¨é…ç½®ã€‚æŸ¥çœ‹HTML5 Historyæ¨¡å¼
+abstract:æ”¯æŒæ‰€æœ‰JavaScriptè¿è¡Œç¯å¢ƒï¼Œå¦‚Node.jsæœåŠ¡å™¨ç«¯ã€‚å¦‚æœå‘ç°æ²¡æœ‰æµè§ˆå™¨çš„API,è·¯ç”±ä¼šè‡ªåŠ¨å¼ºåˆ¶è¿›å…¥è¿™ä¸ªæ¨¡å¼ã€‚
 
-ÔÚrouter/index.jsÖĞ£¬ÓĞÒ»¸öÊôĞÔ£ºmode,ÀàËÆÓÚ
+åœ¨router/index.jsä¸­ï¼Œæœ‰ä¸€ä¸ªå±æ€§ï¼šmode,ç±»ä¼¼äº
 
 export default new Router({
 	mode:"history",
@@ -159,9 +159,9 @@ export default new Router({
 		}]
 	})
 
-ËùÒÔÔÚÌø×ªÒ³ÃæÊ±£¬Ê¹ÓÃthis.$router.push('/my');
+æ‰€ä»¥åœ¨è·³è½¬é¡µé¢æ—¶ï¼Œä½¿ç”¨this.$router.push('/my');
 
-Ë¢ĞÂÒ³ÃæÊ±£¬Ê¹ÓÃthis.$router.go('/my')£¬¿ÉÒÔÊ¡ÂÔgo()ÀïÃæµÄÂ·¾¶£¬Ò»ÑùµÄĞ§¹û;
+åˆ·æ–°é¡µé¢æ—¶ï¼Œä½¿ç”¨this.$router.go('/my')ï¼Œå¯ä»¥çœç•¥go()é‡Œé¢çš„è·¯å¾„ï¼Œä¸€æ ·çš„æ•ˆæœ;
 
 
 
